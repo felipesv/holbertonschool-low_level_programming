@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Show a simple string
  *
@@ -7,8 +6,7 @@
  */
 int main(void)
 {
-char varA[];
-varA = "\"Programming is like building a multilingual puzzle";
+char varA[] = "\"Programming is like building a multilingual puzzle";
 puts(varA);
 return (0);
 }
