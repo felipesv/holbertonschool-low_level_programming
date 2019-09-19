@@ -12,12 +12,12 @@ finish = 'z';
 while (start <= finish)
 {
 putchar (start);
-if (start == 'z')
+start++;
+if ((start - 1) == 'z')
 {
 start = 'A';
 finish = 'Z';
 }
-start++;
 }
 putchar('\n');
 return (0);
