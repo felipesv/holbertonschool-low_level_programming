@@ -7,17 +7,15 @@
 int main(void)
 {
 int start, finish;
-char espacio;
 start = 0;
-finish = 9;
-espacio = 32;
-while (start <= finish)
+finish = 10;
+while (start < finish)
 {
 putchar('0' + start);
-if (start != finish)
+if (start != 9)
 {
 putchar(',');
-putchar(espacio);
+putchar(' ');
 }
 start++;
 }
