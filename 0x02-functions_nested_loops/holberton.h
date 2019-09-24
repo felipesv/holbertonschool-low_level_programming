@@ -36,3 +36,7 @@ int print_last_digit(int);
  * Function jack_bauer created and used in 0x02. C - Functions, nested loops project
  */
 void jack_bauer(void);
+/*
+ * Function times_table created and used in 0x02. C - Functions, nested loops project
+ */
+void times_table(void);
