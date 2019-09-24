@@ -48,3 +48,4 @@ int add(int, int);
  * Function print_to_98 created and used in 0x02. C - Functions, nested loops project
  */
 void print_to_98(int n);
+void print_times_table(int n);
