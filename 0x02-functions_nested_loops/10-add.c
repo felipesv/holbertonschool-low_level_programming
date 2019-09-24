@@ -1,12 +1,12 @@
 #include "holberton.h"
 /**
- * add - suma dos numeros
- * @n: numero 1
- * @m: numero 2
- * 
- * Return: the absolute number of some number
+ * add - add
+ * @n: number 1
+ * @m: number
+ * Return: Always 0 (Success)
  */
 int add(int n, int m)
 {
-  return (n + m);
+int result = n + m;
+return (result);
 }
