@@ -1,60 +1,46 @@
 #include "holberton.h"
 /**
- * times_table - display tables 0 -9
+ * print_times_table - display tables n - n
  * @n: table
  *
  * Return: the absolute number of some number
  */
 void print_times_table(int n)
 {
-	int i, j, multi;
-	char a;
-	if(n >= 0 && n <= 15){
+	int i, j;
+
+	if (n >= 0 && n <= 15)
+	{
 		for (i = 0; i <= n; i++)
 		{
 			for (j = 0; j <= n; j++)
 			{
-				multi = i * j;
-
-				if (j !=0)
+				if (j != 0)
 				{
-					if(multi < 10)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(' ');
-					}else if(multi <= 99)
-					{
-						_putchar(',');
-						_putchar(' ');
-						_putchar(' ');
-					}
-					else if(multi <= 999)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
+					_putchar(',');
+					_putchar(' ');
 				}
-
-				if (multi < 10)
+				else
+					_putchar('0' + (i * j));
+				if ((i * j) < 10 && j != 0)
 				{
-					a = '0' + multi;
-					_putchar(a);
+					_putchar(' ');
+					_putchar(' ');
+					_putchar('0' + (i * j));
 				}
-				else if(multi <= 99)
+				else if ((i * j) <= 99 && j != 0)
 				{
-					_putchar('0' + (multi / 10));
-					_putchar('0' + (multi % 10));
+					_putchar(' ');
+					_putchar('0' + ((i * j) / 10));
+					_putchar('0' + ((i * j) % 10));
 				}
-				else if(multi <= 999)
+				else if ((i * j) <= 999 && j != 0)
 				{
-					_putchar('0' + ((multi / 10) / 10));
-					_putchar('0' + ((multi / 10) % 10));
-					_putchar('0' + (multi % 10));
+					_putchar('0' + (((i * j) / 10) / 10));
+					_putchar('0' + (((i * j) / 10) % 10));
+					_putchar('0' + ((i * j) % 10));
 				}
-
-				if(j == n)
+				if (j == n)
 				{
 					_putchar('\n');
 				}
