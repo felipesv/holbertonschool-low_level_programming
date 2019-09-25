@@ -16,7 +16,16 @@ int main(void)
 			end = start2;
 		}
 		start += end;
-		printf("%.0f\n", start);
+
+		if (i != 49)
+		{
+			printf("%.0f, ", start);
+		}
+		else
+		{
+			printf("%.0f ", start);
+		}
+
 	}
 
 	return (0);
