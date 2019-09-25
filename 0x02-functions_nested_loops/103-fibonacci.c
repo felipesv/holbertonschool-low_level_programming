@@ -14,7 +14,8 @@ int main(void)
 		a = b;
 		b = c;
 
-		if(c % 2 == 0){
+		if (c % 2 == 0)
+		{
 			d += c;
 		}
 
