@@ -6,13 +6,13 @@
  */
 int main(void)
 {
-	long int i, a = 1, b = 2, c = 0;
+	float i, a = 1, b = 2, c = 0;
 
 	for (i = 0; i < 98; i++)
 	{
 		if (i < 2)
 		{
-			printf("%lu, ", i + 1);
+			printf("%.0f, ", i + 1);
 		}
 		else
 		{
@@ -22,11 +22,11 @@ int main(void)
 
 			if (i != 97)
 			{
-				printf("%lu, ", c);
+				printf("%.0f, ", c);
 			}
 			else
 			{
-				printf("%lu\n", c);
+				printf("%.0f\n", c);
 			}
 		}
 	}
