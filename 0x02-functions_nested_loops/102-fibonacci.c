@@ -6,26 +6,28 @@
  */
 int main(void)
 {
-	float i, start = 0, end = 1, start2;
+	long int i, a = 1, b = 2, c = 0;
 
 	for (i = 0; i < 50; i++)
 	{
-		start2 = start;
-		if (i > 2)
+		if (i < 2)
 		{
-			end = start2;
-		}
-		start += end;
-
-		if (i != 49)
-		{
-			printf("%.0f, ", start);
+			printf("%lu, ", i + 1);
 		}
 		else
 		{
-			printf("%.0f ", start);
+			c = a + b;
+			a = b;
+			b = c;
+			if (i != 49)
+			{
+				printf("%lu, ", c);
+			}
+			else
+			{
+				printf("%lu\n", c);
+			}
 		}
-
 	}
 
 	return (0);
