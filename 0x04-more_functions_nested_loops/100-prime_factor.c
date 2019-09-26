@@ -21,16 +21,13 @@ int main(void)
 				divisible = i;
 				numAnte *= divisible;
 
-				if (countDivisible(number / numAnte) == 2)
+				if(countDivisible(number / numAnte) == 2)
 				{
-					printf("%ld,", i);
 					printf("%ld\n", number / numAnte);
 					numAnte = number;
 					break;
 				}
 				numPrime = numPrime / i;
-
-				printf("%ld,", i);
 			}
 		}
 
