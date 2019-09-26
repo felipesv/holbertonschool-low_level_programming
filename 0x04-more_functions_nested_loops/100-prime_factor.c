@@ -9,7 +9,8 @@ long int countDivisible(long int number);
 
 int main(void)
 {
-	long int i = 2, number = 1092, numPrime = number, numAnte = 1, divisible = 1;
+	long int i = 2, number = 612852475143;
+	long int numPrime = number, numAnte = 1, divisible = 1;
 
 	while (numAnte != number)
 	{
@@ -19,18 +20,17 @@ int main(void)
 			{
 				divisible = i;
 				numAnte *= divisible;
-				numPrime = numPrime / i;
 
-				printf("%ld", i);
-				if (numAnte != number)
+				if (countDivisible(number / numAnte) == 2)
 				{
-					printf(",");
-				}
-				else
-				{
-					printf("\n");
+					printf("%ld,", i);
+					printf("%ld\n", number / numAnte);
+					numAnte = number;
 					break;
 				}
+				numPrime = numPrime / i;
+
+				printf("%ld,", i);
 			}
 		}
 
