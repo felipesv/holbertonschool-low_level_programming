@@ -8,32 +8,26 @@
 
 void print_number(int n)
 {
+
+	int numdigit = 0, numN = n,  i, modulo;
+	int a[4];
+
 	if (n < 0)
 	{
 		n = n * -1;
+		numN = n;
 		_putchar('-');
 	}
 
-	if (n < 10)
+	do {
+		modulo = numN % 10;
+		numN = numN / 10;
+		a[numdigit] = modulo;
+		numdigit++;
+	} while (numN > 0);
+
+	for (i = numdigit - 1; i >= 0; i--)
 	{
-		_putchar('0' + n);
-	}
-	else if (n <= 99)
-	{
-		_putchar('0' + (n / 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n <= 999)
-	{
-		_putchar('0' + ((n / 10) / 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n <= 9999)
-	{
-		_putchar('0' + ((n / 10) / 10) / 10);
-		_putchar('0' + ((n / 10) / 10) % 10);
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
+		_putchar('0' + a[i]);
 	}
 }
