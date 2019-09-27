@@ -15,26 +15,33 @@ void print_number(int n)
 		_putchar('-');
 	}
 
-	numdigit = numDigit(n);
-	reverNum = numRever(numdigit - 1, n);
+	if (n > 9)
+	{
+		numdigit = numDigit(n);
+		reverNum = numRever(numdigit - 1, n);
 
-	while (reverNum > 0)
-	{
-		lastDigit = reverNum % 10;
-		reverNum = reverNum / 10;
-		_putchar('0' + lastDigit);
-	}
+		while (reverNum > 0)
+		{
+			lastDigit = reverNum % 10;
+			reverNum = reverNum / 10;
+			_putchar('0' + lastDigit);
+		}
 
-	if (n == 0)
-	{
-		_putchar('0');
-	}
-	else if (n % 10 == 0)
-	{
-		for (i = 0; i < numdigit - numDigit(numRever(numdigit - 1, n)); i++)
+		if (n == 0)
 		{
 			_putchar('0');
 		}
+		else if (n % 10 == 0)
+		{
+			for (i = 0; i < numdigit - numDigit(numRever(numdigit - 1, n)); i++)
+			{
+				_putchar('0');
+			}
+		}
+	}
+	else
+	{
+		_putchar('0' + n);
 	}
 }
 /**
