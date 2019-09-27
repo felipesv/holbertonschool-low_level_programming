@@ -2,13 +2,9 @@
 /**
  * print_number - print number
  * @n: number
- * 
+ *
  * Return: is a void
  */
-int numDigit(int number);
-int numRever(int numbDigit, int Number);
-int expo(int counter);
-
 void print_number(int n)
 {
 	int numdigit, reverNum, lastDigit, i;
