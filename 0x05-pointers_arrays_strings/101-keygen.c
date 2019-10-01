@@ -3,25 +3,36 @@
 #include <stdlib.h>
 /**
  * main - create a password
- * @str: character
  *
- * Return:
+ * Return: 0 success
  */
 int main(void)
 {
-	srand(time(0));
+	int character, lengthPass = character = rand() % 100;
+	int counter = 0;
 
-	int randomLegth = rand() % 24 + 6, counter = 0, randomLetter;
+	srand(time(NULL));
 
-	while (counter <= randomLegth)
+	while (counter < 2440)
 	{
-		randomLetter = (rand() % 127);
+		character = rand() % 127;
 
-		if (randomLetter >= 32)
+		if (character >= 65 && character <= 90)
 		{
-			putchar(randomLetter);
-			counter++;
+			putchar(character);
+			counter += character;
+		}
+		else if (character >= 97 && character <= 122)
+		{
+			putchar(character);
+			counter += character;
+		}
+		else if (character >= 48 && character <= 57)
+		{
+			putchar(character);
+			counter += character;
 		}
 	}
-	return 0;
+
+	return (0);
 }
