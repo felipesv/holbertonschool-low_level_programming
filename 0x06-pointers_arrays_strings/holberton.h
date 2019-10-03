@@ -59,3 +59,5 @@ char *string_toupper(char *);
 char *cap_string(char *);
 int specialCharact(char a);
 char *leet(char *);
+char *rot13(char *);
+char *rot13(char *);
