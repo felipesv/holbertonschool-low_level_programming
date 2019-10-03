@@ -1,28 +1,22 @@
 #include "holberton.h"
 /**
  * string_toupper - all lowercase letters of a string to uppercase.
- * @*: array
+ * @s: array
  *
  * Return: pointer
  */
 
 char *string_toupper(char *s)
 {
-	int ascii, counter;
+	int length;
 
-	while (*s != '\0')
+	for (length = 0; s[length] != '\0'; length++)
 	{
-		ascii = *s;
-
-		if (ascii >= 97 && ascii <= 122)
+		if (s[length] >= 97 && s[length] <= 122)
 		{
-			*s = ascii - 32;
+			s[length] = s[length] - 32;
 		}
-		s++;
-		counter++;
 	}
-
-	s = s - counter;
 
 	return (s);
 }
