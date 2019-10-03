@@ -14,29 +14,18 @@ char *_strncpy(char *dest, char *src, int n)
 
 	jSrc = 0;
 
-	while (jSrc < n && dest[jSrc] != '\0')
+	while (jSrc < n && src[jSrc] != '\0')
 	{
 		dest[jSrc] = src[jSrc];
 
 		jSrc++;
 	}
 
-	return (dest);
-}
-/**
- * lengthArray - length array
- * @array: array
- *
- * Return: return string cocatenated
- */
-int lengthArray(char *array)
-{
-	int length = 0;
-
-	while (array[length] != '\0')
+	while (jSrc < n)
 	{
-		length++;
+		dest[jSrc] = '\0';
+		jSrc++;
 	}
 
-	return (length);
+	return (dest);
 }
