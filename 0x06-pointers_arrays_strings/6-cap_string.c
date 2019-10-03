@@ -9,11 +9,17 @@ char *cap_string(char *s)
 {
 	int length = 0;
 
+	if (s[length] >= 'a' && s[length] <= 'z')
+	{
+		s[length] = s[length] - 32;
+	}
+
 	while (s[length] != '\0')
 	{
+
 		if (specialCharact(s[length]) && !specialCharact(s[length + 1]))
 		{
-			s[length] = s[length] == '\t' ? ' ' : s[length];
+			s[length] = s[length] == 't' ? ' ' : s[length];
 			length++;
 
 			if (s[length] >= 'a' && s[length + 1] <= 'z')
