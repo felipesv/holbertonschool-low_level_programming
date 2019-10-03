@@ -13,6 +13,7 @@ char *cap_string(char *s)
 	{
 		if (specialCharact(s[length]) && !specialCharact(s[length + 1]))
 		{
+			s[length] = s[length] == '\t' ? ' ' : s[length];
 			length++;
 
 			if (s[length] >= 'a' && s[length + 1] <= 'z')
