@@ -9,7 +9,7 @@ char *leet(char *s1)
 {
 	int i, j, lengthInt;
 	char s2[] = "aeotlAEOTL";
-	int s3[] = {52, 51, 55, 48, 49, 52, 51, 55, 48, 49};
+	int s3[] = {52, 51, 48, 55, 49, 52, 51, 48, 55, 49};
 
 	i = 0;
 	lengthInt = sizeof(s3) / sizeof(s3[0]);
