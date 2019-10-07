@@ -71,3 +71,5 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 int counterFind (char *p, char *c);
 char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
+int posEquals(char *s1, char *s2, int posIni);
