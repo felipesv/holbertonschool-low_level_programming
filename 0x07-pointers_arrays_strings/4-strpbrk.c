@@ -9,7 +9,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	char c;
-	char *copy = s;
+	char *copy = s; 
 
 	while (s != '\0' && accept != '\0')
 	{
@@ -22,15 +22,17 @@ char *_strpbrk(char *s, char *accept)
 		accept++;
 	}
 
-	while (copy != '\0')
+	s = copy;
+
+	while (s != '\0')
 	{
-		if (*copy == c)
+		if (*s == c)
 		{
-			return (copy);
+			return (s);
 		}
 
-		copy++;
+		s++;
 	}
-
-	return (copy);
+	
+	return (s);
 }
