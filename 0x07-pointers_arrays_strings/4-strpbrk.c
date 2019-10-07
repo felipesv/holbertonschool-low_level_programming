@@ -22,26 +22,15 @@ char *_strpbrk(char *s, char *accept)
 		accept++;
 	}
 
-	return (_strchr(copy, c));
-}
-/**
- * _strchr - locates a character in a string.
- * @s1: pointer
- * @c: character
- *
- * Return: dest
- */
-char *_strchr(char *s1, char c)
-{
-	while (s1 != '\0')
+	while (copy != '\0')
 	{
-		if (*s1 == c)
+		if (*copy == c)
 		{
-			return (s1);
+			return (copy);
 		}
 
-		s1++;
+		copy++;
 	}
 
-	return ('\0');
+	return (copy);
 }
