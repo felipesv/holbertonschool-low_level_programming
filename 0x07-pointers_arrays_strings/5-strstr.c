@@ -9,83 +9,32 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	int i = 0, j = 0;
 
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (j = 0; needle[j] != '\0'; j++)
+		j = 0;
+
+		while (needle[j] != '\0' && haystack[i] != '\0')
 		{
-			if (haystack[i] == needle[j])
-			{
-				if (posEquals(haystack, needle, i))
-				{
-					return (haystack + i);
-				}
-				else
-				{
-					break;
-				}
-			}
-			else
+			if (haystack[i] != needle[j])
 			{
 				break;
 			}
-		}
-	}
 
-	return (NULL);
-}
-/**
- * posEquals - compare s1 with s2
- * @s1: pointer
- * @s2: pointer
- * @posIni: position
- *
- * Return: return 1 success
- */
-int posEquals(char *s1, char *s2, int posIni)
-{
-	int i, counter, sizes2;
-
-	i = 0;
-	sizes2 = lengthArray(s2);
-	counter = 0;
-
-	while (s1[posIni] != '\0' && s2[i] != '\0')
-	{
-		if (s1[posIni] == s2[i])
-		{
-			counter++;
-			posIni++;
+			j++;
 			i++;
+		}
+
+		if (needle[j] == '\0')
+		{
+			return (haystack + (i - j));
 		}
 		else
 		{
-			break;
+			i -= j;
 		}
 	}
 
-	if (counter == sizes2)
-	{
-		return (1);
-	}
-
-	return (0);
-}
-/**
- * lengthArray - length array
- * @array: array
- *
- * Return: return size
- */
-int lengthArray(char *array)
-{
-	int length = 0;
-
-	while (array[length] != '\0')
-	{
-		length++;
-	}
-
-	return (length);
+	return (haystack + i);
 }
