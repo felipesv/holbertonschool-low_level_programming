@@ -9,7 +9,7 @@ int is_palindrome(char *s)
 {
 	int length, result;
 
-	length = lengthArray(s) - 2;
+	length = lengthArray(s);
 	if (length == 1)
 		return (1);
 
