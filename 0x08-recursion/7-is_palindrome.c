@@ -10,7 +10,10 @@ int is_palindrome(char *s)
 	int length, result;
 
 	length = lengthArray(s) - 2;
-	result = palind(s, 0, length);
+	if (length == 1)
+		return (1);
+
+	result = palind(s, 0, (length - 2));
 
 	return (result);
 }
