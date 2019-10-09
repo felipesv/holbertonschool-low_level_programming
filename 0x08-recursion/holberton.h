@@ -88,3 +88,6 @@ int _sqrt_recursion(int n);
 int _root(int sn, int vn);
 int is_prime_number(int n);
 int prime_loop(int sn, int vn, int acum);
+int is_palindrome(char *s);
+int palind(char *s, int i, int j);
+int lengthArray(char *array);
