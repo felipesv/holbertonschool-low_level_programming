@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * is_palindrome - if a string is a palindrome
  * @s: string
@@ -8,6 +9,11 @@
 int is_palindrome(char *s)
 {
 	int length, result;
+
+	if (s == NULL)
+	{
+		return (0);
+	}
 
 	length = lengthArray(s);
 	if (length == 1)
