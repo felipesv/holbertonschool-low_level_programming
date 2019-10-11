@@ -1,0 +1,1 @@
+int searchChar(char *p);
