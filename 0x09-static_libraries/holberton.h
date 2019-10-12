@@ -1,3 +1,6 @@
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
+
 /*
  * Functions Holberton
  */
@@ -26,3 +29,5 @@ char *_strstr(char *haystack, char *needle);
  */
 int lengthArray(char *array);
 int counterFind(char *p, char *c);
+
+#endif /* HOLBERTON_H */
