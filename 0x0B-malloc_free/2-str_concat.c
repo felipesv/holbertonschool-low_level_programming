@@ -19,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 	lns1 = fn_lengthOfString(s1);
 	lns2 = fn_lengthOfString(s2);
 
-	p = malloc((lns1 + lns2) * sizeof(char));
+	p = malloc((lns1 + lns2 + 1) * sizeof(char));
 
 	if (p == NULL)
 		return (NULL);
@@ -27,11 +27,9 @@ char *str_concat(char *s1, char *s2)
 	while (cnt != (lns1 + lns2))
 	{
 		if (cnt < lns1)
-			*(p + cnt) = *(s1 + cnt);
+			*(p + cnt) = *(s1 + (cnt++));
 		else
 			*(p + cnt) = *(s2 + (cnts2++));
-
-		cnt++;
 	}
 
 	*(p + cnt) = '\0';
