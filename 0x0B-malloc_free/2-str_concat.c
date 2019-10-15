@@ -13,8 +13,11 @@ char *str_concat(char *s1, char *s2)
 	int lns1, lns2, cnt = 0, cnts2 = 0;
 	char *p;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
 
 	lns1 = fn_lengthOfString(s1);
 	lns2 = fn_lengthOfString(s2);
