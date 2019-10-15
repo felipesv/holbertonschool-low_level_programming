@@ -30,5 +30,7 @@ char *_strdup(char *str)
 		*(p + counter) = *(str + counter);
 	}
 
+	*(p + counter) = '\0';
+
 	return (p);
 }
