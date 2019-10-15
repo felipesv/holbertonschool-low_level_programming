@@ -21,7 +21,6 @@ char *argstostr(int ac, char **av)
 		cnt++;
 	}
 
-	printf("Counter: %i", (ln + ac + 1));
 	p = malloc(ln + ac + 1);
 
 	if (p == NULL)
