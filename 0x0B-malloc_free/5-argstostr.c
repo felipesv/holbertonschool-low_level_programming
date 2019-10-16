@@ -10,59 +10,31 @@
  */
 char *argstostr(int ac, char **av)
 {
-	char *p, ln = 0, cnt = 0, i = 0;
+	char *p;
+	int ln = 0, i = 0, j = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	while (*(av + cnt))
-	{
-		ln += fn_lengthOfString(*(av + cnt));
-		cnt++;
-	}
+	for (i = 0; i < ac; i++, ln++)
+		for (j = 0; av[i][j] != '\0'; j++, ln++)
 
-	p = malloc(ln + ac + 1);
+			p = malloc(ln);
 
 	if (p == NULL)
 		return (NULL);
 
-	cnt = 0;
-
-	while (*av)
+	for (i = 0, ln = 0; i < ac; i++, ln++)
 	{
-		char *c = *av;
-
-		cnt = 0;
-		ln += fn_lengthOfString(c);
-
-		while (*(c + cnt))
+		for (j = 0; av[i][j] != '\0'; j++, ln++)
 		{
-			*(p + (i++)) = *c;
-			c++;
+			*(p + ln) = av[i][j];
 		}
 
-		*(p + (i++)) = '\n';
-		av++;
+		*(p + ln) = '\n';
 	}
 
-	*(p + i) = '\0';
+	*(p + ln) = '\0';
 
 	return (p);
-}
-/**
- * fn_lengthOfString - length of a string.
- * @p: string
- *
- * Return: length
- */
-int fn_lengthOfString(char *p)
-{
-	int length = 0;
-
-	while (*(p +  length))
-	{
-		length++;
-	}
-
-	return (length);
 }
