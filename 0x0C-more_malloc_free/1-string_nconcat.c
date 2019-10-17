@@ -35,12 +35,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while ((*s1 || *s2) && (cnt != (ln1 + ln2 + 1)))
 	{
 		if (*s1)
-			*(p + cnt) = *(s1++);
-		else
-			*(p + cnt) = *(s2++);
-
-		cnt++;
+			*(p + (cnt++)) = *(s1++);
+		else if (*s2)
+			*(p + (cnt++)) = *(s2++);
 	}
+
+	*(p + (--cnt)) = '\0';
 
 	return (p);
 
