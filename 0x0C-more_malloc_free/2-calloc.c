@@ -1,6 +1,4 @@
-
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
  * _calloc - allocates memory for an array
@@ -12,8 +10,6 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *p;
-	char *p2;
-	unsigned int cnt = 0;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -23,13 +19,26 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (p == NULL)
 		return (NULL);
 
-	p2 = p;
-	for (cnt = 0; cnt < size; cnt++)
-	{
-		*(p2 + cnt) = 0;
-	}
-
-	p = (void *)p2;
+	_memset(p, 0, size);
 
 	return (p);
+}
+/**
+ * _memset - fills memory with a constant byte.
+ * @s: pointer
+ * @b: char given
+ * @n: bytes
+ *
+ * Return: return string cocatenated
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		*(s + i) = b;
+	}
+
+	return (s);
 }
