@@ -23,6 +23,6 @@ typedef struct dog dog_t;
 
 dog_t *new_dog(char *name, float age, char *owner);
 int lengthArray(char *array);
-
+void free_dog(dog_t *d);
 
 #endif /* DOG_H */
