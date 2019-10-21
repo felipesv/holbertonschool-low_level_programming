@@ -14,6 +14,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int ln_name, ln_owner, cnt;
 	dog_t *nw_dog;
 
+	if (name == NULL || owner == NULL)
+		return (NULL);
+
 	ln_name = lengthArray(name);
 	ln_owner = lengthArray(owner);
 
