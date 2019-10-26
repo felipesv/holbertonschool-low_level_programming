@@ -12,42 +12,42 @@ void print_all(const char * const format, ...)
 	int cnt = 0;
 	char *stringR, *separator = "";
 
-	va_start(arguments, format);
-	while (*(format + cnt))
+	while (format)
 	{
-		if (validChar(*(format + cnt)))
+		va_start(arguments, format);
+		while (*(format + cnt))
 		{
-			switch (*(format + cnt))
+			if (validChar(*(format + cnt)))
 			{
-			case 'c':
-				printf("%s", separator);
-				printf("%c", va_arg(arguments, int));
-				separator = ", ";
-				break;
-			case 'i':
-				printf("%s", separator);
-				printf("%i", va_arg(arguments, int));
-				separator = ", ";
-				break;
-			case 'f':
-				printf("%s", separator);
-				printf("%f", va_arg(arguments, double));
-				separator = ", ";
-				break;
-			case 's':
-				stringR = va_arg(arguments, char*);
-				if (stringR == NULL)
-					stringR = "(nil)";
-				printf("%s", separator);
-				printf("%s", stringR);
-				separator = ", ";
-				break;
+				switch (*(format + cnt))
+				{
+				case 'c':
+					printf("%s%c", separator, va_arg(arguments, int));
+					separator = ", ";
+					break;
+				case 'i':
+					printf("%s%i", separator, va_arg(arguments, int));
+					separator = ", ";
+					break;
+				case 'f':
+					printf("%s%f", separator, va_arg(arguments, double));
+					separator = ", ";
+					break;
+				case 's':
+					stringR = va_arg(arguments, char*);
+					if (stringR == NULL)
+						stringR = "(nil)";
+					printf("%s%s", separator, stringR);
+					separator = ", ";
+					break;
+				}
 			}
+			cnt++;
 		}
-		cnt++;
+		va_end(arguments);
+		break;
 	}
 	printf("\n");
-	va_end(arguments);
 }
 /**
  * validChar - check if is a valid type data
