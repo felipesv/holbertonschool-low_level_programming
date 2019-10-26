@@ -10,7 +10,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arguments;
 	int cnt = 0;
-	char *stringR;
+	char *stringR, *separator = "";
 
 	va_start(arguments, format);
 	while (*(format + cnt))
@@ -20,28 +20,28 @@ void print_all(const char * const format, ...)
 			switch (*(format + cnt))
 			{
 			case 'c':
+				printf("%s", separator);
 				printf("%c", va_arg(arguments, int));
+				separator = ", ";
 				break;
 			case 'i':
+				printf("%s", separator);
 				printf("%i", va_arg(arguments, int));
+				separator = ", ";
 				break;
 			case 'f':
+				printf("%s", separator);
 				printf("%f", va_arg(arguments, double));
+				separator = ", ";
 				break;
 			case 's':
 				stringR = va_arg(arguments, char*);
 				if (stringR == NULL)
 					stringR = "(nil)";
+				printf("%s", separator);
 				printf("%s", stringR);
+				separator = ", ";
 				break;
-			}
-
-			switch (*(format + (cnt + 1)))
-			{
-			case '\0':
-				break;
-			default:
-				printf(", ");
 			}
 		}
 		cnt++;
