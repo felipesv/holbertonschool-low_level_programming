@@ -39,14 +39,14 @@ void print_all(const char * const format, ...)
 			switch (*(format + (cnt + 1)))
 			{
 			case '\0':
-				printf("\n");
+				break;
 			default:
 				printf(", ");
 			}
 		}
 		cnt++;
 	}
-
+	printf("\n");
 	va_end(arguments);
 }
 /**
