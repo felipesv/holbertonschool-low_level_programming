@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * add_node - adds a new node at the end
+ * add_node_end - adds a new node at the end
  * @head: list
  * @str: string to duplicate
  *
@@ -27,10 +27,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	(*new_list).next = NULL;
 
 	if (*head == NULL)
-        {
-                *head = new_list;
-                return(*head);
-        }
+	{
+		*head = new_list;
+		return (*head);
+	}
 
 	while (1)
 	{
