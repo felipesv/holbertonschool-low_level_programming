@@ -2,7 +2,7 @@
 /**
  * clear_bit - sets the value of a bit to 0
  * @n: pointer
- * @indexx: index to change
+ * @index: index to change
  *
  * Return: returns the number
  */
@@ -17,6 +17,9 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (1);
 
 	mask = mask << index;
+
+	if (*n < mask)
+		return (-1);
 
 	*n = *n - mask;
 
