@@ -5,9 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 unsigned int binary_to_uint(const char *b);
 int validCounterBinary(const char *p);
 int _pow_recursion(int x, int y);
+void print_binary(unsigned long int n);
+int _putchar(char c);
 
 #endif /* HOLBERTON_H */
