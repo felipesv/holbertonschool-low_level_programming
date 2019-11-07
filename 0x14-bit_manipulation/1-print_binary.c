@@ -15,7 +15,8 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while (m != 0) {
+	while (m != 0)
+	{
 		m = m >> 1;
 		cntBits++;
 	}
