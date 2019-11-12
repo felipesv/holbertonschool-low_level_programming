@@ -29,13 +29,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	rd = read(fd, buf, letters);
 
 	if (rd < 0)
+	{
+		free(buf);
+		close(fd);
 		return (0);
+	}
 
 	wr = write(STDOUT_FILENO, buf, rd);
 
 	if (wr < 0)
+	{
+		free(buf);
+		close(fd);
 		return (0);
+	}
 
 	free(buf);
+	close(fd);
 	return (rd);
 }
