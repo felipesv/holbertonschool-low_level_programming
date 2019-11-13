@@ -65,13 +65,15 @@ int main(int argc, char *argv[])
 	while (file1Read > 0)
 	{
 		file2Write = write(file2Open, buffer, file1Read);
-		file1Read = read(file1Open, buffer, 1024);
 		if (file2Write < 0)
 			print_error(99, file2);
+		file1Read = read(file1Open, buffer, 1024);
+		if (file1Read < 0)
+			print_error(98, file2);
 	}
 
 	if (file1Read < 0)
-		print_error(99, file2);
+		print_error(98, file2);
 
 	file1Close = close(file1Open);
 	if (file1Close < 0)
@@ -80,6 +82,5 @@ int main(int argc, char *argv[])
 	file2Close = close(file2Open);
 	if (file2Close < 0)
 		print_error_close(file2Close);
-
 	return (0);
 }
