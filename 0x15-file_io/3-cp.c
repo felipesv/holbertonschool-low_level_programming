@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 		print_error(98, file1);
 
 	file2 = argv[2];
-	file2Open = open(file2, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	file2Open = open(file2, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (file2Open == -1)
 		print_error(99, file2);
