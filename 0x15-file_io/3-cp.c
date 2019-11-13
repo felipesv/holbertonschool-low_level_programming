@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * print_error - all the error
+ * print_error - all the error with msj char*
  * @error: error
  * @name: name
  *
- * Return: Always 0.
+ * Return: is a void
  */
 void print_error(int error, char *name)
 {
@@ -24,6 +24,17 @@ void print_error(int error, char *name)
 	exit(error);
 }
 /**
+ * print_error_close - error close
+ * @msj: error value
+ *
+ * Return: is a void
+ */
+void print_error_close(int msj)
+{
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", msj);
+	exit(100);
+}
+/**
  * main - check the code for Holberton School students.
  * @argc: counter
  * @argv: arguments
@@ -33,7 +44,7 @@ void print_error(int error, char *name)
 int main(int argc, char *argv[])
 {
 	char *file1, *file2, buffer[1024];
-	int file1Open, file2Open, file1Close, file2Close, file1Read;
+	int file1Open, file2Open, file1Close, file2Close, file1Read, file2Write;
 
 	if (argc != 3)
 		print_error(97, NULL);
@@ -51,25 +62,24 @@ int main(int argc, char *argv[])
 		print_error(99, file2);
 
 	file1Read = read(file1Open, buffer, 1024);
-	while (1)
+	while (file1Read > 0)
 	{
-		write(file2Open, buffer, file1Read);
+		file2Write = write(file2Open, buffer, file1Read);
 		file1Read = read(file1Open, buffer, 1024);
-		if (file1Read <= 0)
-			break;
+		if (file2Write < 0)
+			print_error(99, file2);
 	}
+
+	if (file1Read < 0)
+		print_error(99, file2);
+
 	file1Close = close(file1Open);
 	if (file1Close < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1Close);
-		exit(100);
-	}
+		print_error_close(file1Close);
+
 	file2Close = close(file2Open);
 	if (file2Close < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1Close);
-		exit(100);
-	}
+		print_error_close(file2Close);
 
 	return (0);
 }
