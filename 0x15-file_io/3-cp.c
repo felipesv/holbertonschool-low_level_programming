@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	}
 
 	if (file1Read < 0)
-		print_error(98, file2);
+		print_error(98, file1);
 
 	file1Close = close(file1Open);
 	if (file1Close < 0)
