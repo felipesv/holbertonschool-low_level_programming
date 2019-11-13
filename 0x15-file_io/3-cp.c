@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 			print_error(99, file2);
 		file1Read = read(file1Open, buffer, 1024);
 		if (file1Read < 0)
-			print_error(98, file2);
+			print_error(98, file1);
 	}
 
 	if (file1Read < 0)
