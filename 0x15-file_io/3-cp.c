@@ -70,15 +70,15 @@ int main(int argc, char *argv[])
 		file1Read = read(file1Open, buffer, 1024);
 		if (file1Read < 0)
 			print_error(98, file1);
+		if (file1Read != file2Write)
+			print_error(99, file2);
 	}
 
 	if (file1Read < 0)
 		print_error(98, file1);
-
 	file1Close = close(file1Open);
 	if (file1Close < 0)
 		print_error_close(file1Close);
-
 	file2Close = close(file2Open);
 	if (file2Close < 0)
 		print_error_close(file2Close);
