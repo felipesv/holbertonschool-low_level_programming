@@ -61,15 +61,11 @@ int main(int argc, char *argv[])
 	if (file2Open == -1)
 		print_error(99, file2);
 
-	file1Read = read(file1Open, buffer, 1024);
-	while (file1Read > 0)
+	while ((file1Read = read(file1Open, buffer, 1024)) > 0)
 	{
 		file2Write = write(file2Open, buffer, file1Read);
 		if (file2Write < 0)
 			print_error(99, file2);
-		file1Read = read(file1Open, buffer, 1024);
-		if (file1Read < 0)
-			print_error(98, file1);
 	}
 
 	if (file1Read < 0)
