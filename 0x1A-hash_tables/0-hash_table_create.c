@@ -17,10 +17,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	(*hash_tab).array = malloc(sizeof(hash_node_t *) * size);
 	if ((*hash_tab).array == NULL)
-	{
-		free(hash_tab);
 		return (NULL);
-	}
 
 	for (cnt = 0; cnt < size; cnt++)
 		(*hash_tab).array[cnt] = NULL;
