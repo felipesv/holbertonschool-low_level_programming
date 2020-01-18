@@ -11,6 +11,12 @@ void hash_table_delete(hash_table_t *ht)
 	unsigned long int cnt = 0;
 	hash_node_t *node = NULL;
 
+	if (ht == NULL)
+	{
+		free(ht);
+		return;
+	}
+
 	if ((*ht).array != NULL)
 	{
 		for (cnt = 0; cnt < (*ht).size; cnt++)
@@ -19,9 +25,7 @@ void hash_table_delete(hash_table_t *ht)
 			free_list(node);
 		}
 	}
-
 	free((*ht).array);
-	free(ht);
 }
 /**
  * free_list - free a list
