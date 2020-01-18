@@ -11,9 +11,9 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *node = NULL;
 	char *comma = "";
 
-	printf("{");
 	if (ht != NULL)
 	{
+		printf("{");
 		for (cnt = 0; cnt < (*ht).size; cnt++)
 		{
 			node = (*ht).array[cnt];
@@ -26,6 +26,6 @@ void hash_table_print(const hash_table_t *ht)
 			}
 
 		}
+		printf("}\n");
 	}
-	printf("}\n");
 }
