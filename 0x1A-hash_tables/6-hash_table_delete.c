@@ -12,10 +12,7 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *node = NULL;
 
 	if (ht == NULL)
-	{
-		free(ht);
 		return;
-	}
 
 	if ((*ht).array != NULL)
 	{
@@ -26,6 +23,7 @@ void hash_table_delete(hash_table_t *ht)
 		}
 	}
 	free((*ht).array);
+	free(ht);
 }
 /**
  * free_list - free a list
