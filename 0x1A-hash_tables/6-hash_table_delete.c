@@ -21,8 +21,8 @@ void hash_table_delete(hash_table_t *ht)
 			node = (*ht).array[cnt];
 			free_list(node);
 		}
+		free((*ht).array);
 	}
-	free((*ht).array);
 	free(ht);
 }
 /**
