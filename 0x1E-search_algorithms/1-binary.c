@@ -8,7 +8,7 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
 	return (binary_recursion(array, value, 0, size - 1));
 }
@@ -24,12 +24,12 @@ int binary_recursion(int *array, int value, size_t from, size_t to)
 {
 	size_t middle = 0;
 
-	if (from == to)
+	if (from >= to)
 		return (-1);
 
 	print_array(array, from, to);
 
-	middle = from + ((to - from) / 2);
+	middle = from + (to - from) / 2;
 
 	if (array[middle] == value)
 		return ((int)middle);
