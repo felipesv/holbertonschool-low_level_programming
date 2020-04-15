@@ -10,7 +10,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	if (array == NULL || size == 0)
 		return (-1);
-	binary_recursion(array, value, 0, size - 1);
+	return (binary_recursion(array, value, 0, size - 1));
 }
 /**
  * binary_recursion - searches for a value in a sorted array
