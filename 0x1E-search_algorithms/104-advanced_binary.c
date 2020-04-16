@@ -8,9 +8,20 @@
  */
 int advanced_binary(int *array, size_t size, int value)
 {
+	size_t middle = 0;
+
 	if (array == NULL)
 		return (-1);
-	return (binary_recursion(array, value, 0, size - 1));
+
+	print_array(array, 0, size - 1);
+	middle = ((size - 1) / 2) + 1;
+
+	if (array[middle] == value)
+		return (middle);
+	else if (array[middle] > value)
+		return (binary_recursion(array, value, 0, middle - 1));
+	else
+		return (binary_recursion(array, value, middle, size - 1));
 }
 /**
  * binary_recursion - searches for a value in a sorted array
@@ -27,12 +38,12 @@ int binary_recursion(int *array, int value, size_t from, size_t to)
 	if (from > to)
 		return (-1);
 
+	middle = (from + (to - from) / 2);
+
 	print_array(array, from, to);
 
-	middle = from + (to - from) / 2;
-
 	if (array[middle] == value)
-		return ((int)middle);
+		return (middle);
 	else if (array[middle] > value)
 		return (binary_recursion(array, value, from, middle - 1));
 	else
