@@ -1,4 +1,4 @@
-# 0x1C. C - Makefiles
+<p align='center'><img src='https://github.com/felipesv/holbertonschool-low_level_programming/blob/master/0x1C-makefiles/main_header.png' alt='Banner'></a></p> 
 
 ## Description
 What you should learn from this project:
@@ -11,31 +11,7 @@ What you should learn from this project:
 * What are variables and how to set and use them
 
 ---
-
-### [0. make -f 0-Makefile](./0-Makefile)
-* Create your first Makefile.
-
-
-### [1. make -f 1-Makefile](./1-Makefile)
-* Requirements:
-
-
-### [2. make -f 2-Makefile](./2-Makefile)
-* Create your first useful Makefile.
-
-
-### [3. make -f 3-Makefile](./3-Makefile)
-* Requirements:
-
-
-### [4. A complete Makefile](./4-Makefile)
-* Requirements:
-
-
-### [5. Island Perimeter](./5-island_perimeter.py)
-* Technical interview preparation: 
-
 ---
 
 ## Author
-* **Felipe Satizabal** - [felipesv](https://github.com/felipesv)
+* **Felipe Satizabal** - [GitHub](https://github.com/felipesv)[LinkedIn](https://www.linkedin.com/in/felipesatizabal/)
